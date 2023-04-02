@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane;
+
+public class ProgramaP {
+
+	public static void main(String[] args) {
+		String [] botoes = {"Novo Usuario", "Criar Treino", "Treinar", "Sair"};
+		Treino t = new Treino();
+		int resposta;
+		resposta = JOptionPane.showOptionDialog(null,"O que deseja fazer?","Gerenciador de Treino", 0, JOptionPane.QUESTION_MESSAGE, null, botoes, botoes[0]);
+		
+		while(resposta != 3) {
+			if(resposta == 0) {
+				t.fazerCadastro();
+				t.info();
+			} else {
+				if(resposta == 1) {
+					t.criaTreino();
+				} else {
+					if(resposta == 2) {
+						t.orientaExercicio();
+					}
+				}
+			}
+		resposta = JOptionPane.showOptionDialog(null, "O que você deseja fazer?", 
+				"Assistente de Treino", 0, JOptionPane.QUESTION_MESSAGE, 
+				null, botoes, botoes[1]);
+		}
+		
+	}
+
+}
