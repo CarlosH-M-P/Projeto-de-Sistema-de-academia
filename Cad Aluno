@@ -1,0 +1,54 @@
+import javax.swing.JOptionPane;
+
+public class Aluno extends Usuario {
+	private String nome;
+	private String fone;
+	private int anoDeNascimento;
+	
+	@Override
+	public String fazerCadastro() {
+		String resposta;
+		
+		resposta = JOptionPane.showInputDialog("Cadastre um ID: ");
+		setId(resposta);
+		resposta = JOptionPane.showInputDialog("Digite um E-mail: ");
+		setEmailUsuario(resposta);
+		resposta = JOptionPane.showInputDialog("Digite seu CPF: ");
+		setCpf(resposta);
+		resposta = JOptionPane.showInputDialog("Digite seu nome: ");
+		setNome(resposta);
+		resposta = JOptionPane.showInputDialog("Cadastre seu número de telefone: ");
+		setFone(resposta);
+		resposta = JOptionPane.showInputDialog("Digite o ano em que nasceu: ");
+		anoDeNascimento = Integer.parseInt(resposta);
+		resposta = JOptionPane.showInputDialog("Digite seu sexo: ");
+		setSexo(resposta);
+		
+		return resposta;
+	}
+	
+	public void info() {
+		JOptionPane.showMessageDialog(null,"ID: " + getId() + "\nEmail: " + getEmailUsuario() + "\nCPF: " + getCpf() + 
+				"\nSexo: " + getSexo() + "\nNome do aluno: " + nome + "\nTelefone: " + fone + "\nData De Nascimento: " +
+				anoDeNascimento);
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getFone() {
+		return fone;
+	}
+	public void setFone(String fone) {
+		this.fone = fone;
+	}
+	public int getAnoDeNascimento() {
+		return getAnoDeNascimento();
+	}
+	public void setAnoDeNascimento(int anoDeNascimento) {
+		this.anoDeNascimento = anoDeNascimento;
+	}
+}
