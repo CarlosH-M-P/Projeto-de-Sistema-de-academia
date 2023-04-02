@@ -1,0 +1,180 @@
+import javax.swing.JOptionPane;
+
+public class Treino extends Exercicio {
+	private Exercicio segunda[] = new Exercicio[10];
+	private Exercicio terca[] = new Exercicio[10];
+	private Exercicio quarta[] = new Exercicio[10];
+	private Exercicio quinta[] = new Exercicio[10];
+	private Exercicio sexta[] = new Exercicio[10];
+	private Exercicio sabado[] = new Exercicio[10];
+	private Exercicio domingo[] = new Exercicio[10];
+	
+
+	public Exercicio[] getSegundo() {
+		return segunda;
+	}
+
+	public void setSegundo(Exercicio[] segunda) {
+		this.segunda = segunda;
+	}
+
+	public Exercicio[] getTerca() {
+		return terca;
+	}
+
+	public void setTerca(Exercicio[] terca) {
+		this.terca = terca;
+	}
+
+	public Exercicio[] getQuarta() {
+		return quarta;
+	}
+
+	public void setQuarta(Exercicio[] quarta) {
+		this.quarta = quarta;
+	}
+
+	public Exercicio[] getQuinta() {
+		return quinta;
+	}
+
+	public void setQuinta(Exercicio[] quinta) {
+		this.quinta = quinta;
+	}
+
+	public Exercicio[] getSexta() {
+		return sexta;
+	}
+
+	public void setSexta(Exercicio[] sexta) {
+		this.sexta = sexta;
+	}
+	public Exercicio[] getSabado() {
+		return sabado;
+	}
+
+	public void setSabado(Exercicio[] sabado) {
+		this.sabado = sabado;
+	}
+	public Exercicio[] getDomingo() {
+		return domingo;
+	}
+
+	public void setDomingo(Exercicio[] domingo) {
+		this.domingo = domingo;
+	}
+
+	// Métodos
+	public void criaTreino() {
+		int resposta = JOptionPane.YES_OPTION;
+
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja criar exercicios para a segunda-feira?",
+				"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		for (int i = 0; i < 10 && resposta == JOptionPane.YES_OPTION; i++) {
+			segunda[i] = new Exercicio();
+			segunda[i].leiaExercicio();
+			resposta = JOptionPane.showConfirmDialog(null, "Deseja criar mais um exercicio na segunda-feira?",
+					"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		}
+
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja criar exercicios para a terça-feira?",
+				"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		for (int i = 0; i < 10 && resposta == JOptionPane.YES_OPTION; i++) {
+			terca[i] = new Exercicio();
+			terca[i].leiaExercicio();
+			resposta = JOptionPane.showConfirmDialog(null, "Deseja criar mais um exercicio na terça-feira?",
+					"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		}
+
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja criar exercicios para a quarta-feira?",
+				"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		for (int i = 0; i < 10 && resposta == JOptionPane.YES_OPTION; i++) {
+			quarta[i] = new Exercicio();
+			quarta[i].leiaExercicio();
+			resposta = JOptionPane.showConfirmDialog(null, "Deseja criar mais um exercicio na quarta-feira?",
+					"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		}
+
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja criar exercicios para a quinta-feira?",
+				"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		for (int i = 0; i < 10 && resposta == JOptionPane.YES_OPTION; i++) {
+			quinta[i] = new Exercicio();
+			quinta[i].leiaExercicio();
+			resposta = JOptionPane.showConfirmDialog(null, "Deseja criar mais um exercicio na quinta-feira?",
+					"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		}
+
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja criar exercicios para a sexta-feira?",
+				"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		for (int i = 0; i < 10 && resposta == JOptionPane.YES_OPTION; i++) {
+			sexta[i] = new Exercicio();
+			sexta[i].leiaExercicio();
+			resposta = JOptionPane.showConfirmDialog(null, "Deseja criar mais um exercicio na sexta-feira?",
+					"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		}
+		
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja criar exercicios para o Sabado?",
+				"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		for (int i = 0; i < 10 && resposta == JOptionPane.YES_OPTION; i++) {
+			sabado[i] = new Exercicio();
+			sabado[i].leiaExercicio();
+			resposta = JOptionPane.showConfirmDialog(null, "Deseja criar mais um exercicio no sabado?",
+					"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		}
+		
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja criar exercicios para o domingo?",
+				"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		for (int i = 0; i < 10 && resposta == JOptionPane.YES_OPTION; i++) {
+			domingo[i] = new Exercicio();
+			domingo[i].leiaExercicio();
+			resposta = JOptionPane.showConfirmDialog(null, "Deseja criar mais um exercicio no domingo?",
+					"Criação de Treino", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		}
+		
+	}
+
+	@Override
+	public void orientaExercicio() {
+		String[] botoes = { "segunda", "terça", "quarta", "quinta", "sexta", "sabado", "domingo" };
+		int resposta;
+		resposta = JOptionPane.showOptionDialog(null, "Qual o treino de hoje?", "Escolha do treino", 0,
+				JOptionPane.QUESTION_MESSAGE, null, botoes, botoes[0]);
+		switch (botoes[resposta]) {
+		case "segunda":
+			for (int i = 0; i < 10 && segunda[i] != null; i++) {
+				segunda[i].orientaExercicio();
+			}
+			break;
+		case "terça":
+			for (int i = 0; i < 10 && terca[i] != null; i++) {
+				terca[i].orientaExercicio();
+			}
+			break;
+		case "quarta":
+			for (int i = 0; i < 10 && quarta[i] != null; i++) {
+				quarta[i].orientaExercicio();
+			}
+			break;
+		case "quinta":
+			for (int i = 0; i < 10 && quinta[i] != null; i++) {
+				quinta[i].orientaExercicio();
+			}
+			break;
+		case "sexta":
+			for (int i = 0; i < 10 && sexta[i] != null; i++) {
+				sexta[i].orientaExercicio();
+			}
+			break;
+		case "sabado":
+			for (int i = 0; i < 10 && sabado[i] != null; i++) {
+				sabado[i].orientaExercicio();
+			}
+			break;
+		case "domingo":
+			for (int i = 0; i < 10 && domingo[i] != null; i++) {
+				domingo[i].orientaExercicio();
+			}
+			break;
+		}
+	}
+}
