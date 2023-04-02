@@ -1,0 +1,114 @@
+import javax.swing.JOptionPane;
+public class Exercicio extends Aluno {
+
+	// Atributos
+		private String exercicio;
+		private String tipo;
+		private int series;
+		private int repeticoes;
+	
+
+		// Métodos acessores
+		// Permitem que outras classes acessem os atributos privados
+		
+		
+		public String getExercicio() {
+			return exercicio;
+		}
+
+		public void setExercicio(String exercicio) {
+			this.exercicio = exercicio;
+		}
+		public String getTipo() {
+			return tipo;
+		}
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
+
+		public int getSeries() {
+			return series;
+		}
+
+		public void setSeries(int series) {
+			if (series >= 2 && series <= 6) {
+				this.series = series;
+			} else {
+				this.series = 4;
+			}
+		}
+
+		public int getRepeticoes() {
+			return repeticoes;
+		}
+
+		public void setRepeticoes(int repeticoes) {
+			if (repeticoes >= 3 && repeticoes <= 30) {
+				this.repeticoes = repeticoes;
+			} else {
+				this.repeticoes = 15;
+			}
+		}
+
+		// Construtores
+		public Exercicio(String tipo, String nome, int series, int repeticoes) {
+			setTipo(tipo);
+			setExercicio(exercicio);
+			setSeries(series);
+			setRepeticoes(repeticoes);
+		}
+
+		public Exercicio() {
+			// Na linha abaixo, chamamos o construtor que recebe quatro parâmetros.
+			this("Exercicio indefinido","tipo indefinido", 3, 15);
+		}
+
+		// Métodos
+		public void leiaExercicio() {
+			setExercicio (JOptionPane.showInputDialog(null, 
+					"Descreva o Exercicio: ", 
+					"Cadastro de exercicio", 
+					JOptionPane.QUESTION_MESSAGE));
+			setTipo (JOptionPane.showInputDialog(null,
+					"Descreva o Tipo do exercicio", 
+					"Cadastro de exercicio", 
+					JOptionPane.QUESTION_MESSAGE));
+			
+			setSeries (Integer.parseInt(JOptionPane.showInputDialog(null, 
+					"Digite a quantidades de séries", 
+					"Cadastro de Exercicio", 
+					JOptionPane.QUESTION_MESSAGE)));
+			setRepeticoes (Integer.parseInt(JOptionPane.showInputDialog(null, 
+					"Digite o número de repetições por séries", 
+					"Cadastro de Exercicio", 
+					JOptionPane.QUESTION_MESSAGE)));
+		}
+		public String escrevaExercicio() {
+			String saida;
+			
+			saida = "Exercicio: " + getExercicio() + 
+					"\ntipo: " + getTipo() +
+					"\nSéries: " + getSeries() + 
+					"\nRepetições: " + getRepeticoes();
+			
+			return saida;
+		}
+		public void mostraExercicio() {
+			JOptionPane.showInputDialog(null, 
+					escrevaExercicio(), 
+					getExercicio(), 
+					JOptionPane.INFORMATION_MESSAGE);
+		}
+		public void orientaExercicio() {
+			String descricao = escrevaExercicio();
+			for (int i = 1; i <= getSeries(); i++) {
+				JOptionPane.showInputDialog(null, 
+						descricao + "\n\nFaça a série " + i,
+						getExercicio(),
+						JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Descanse 90 segundos.",
+						getExercicio(),
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
+	}
